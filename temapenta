@@ -1,0 +1,93 @@
+
+package temapenta;
+
+public class TemaPenta {
+
+    public static void main(String[] args) {
+
+        //suma numerelor
+        int Nr = 5, s = 0;
+
+        for (int i = 1; i <= Nr; i++) {
+            s += i;
+
+        }
+        System.out.println("Suma numerelor este : " + s);
+
+//Media aritmetica a numerelor cuprinse intr un interval
+        int x = 100, y = 200, s2 = 0;
+        float nr;
+        for (int i = x; i <= y; i++) {
+            s2 += i;
+
+        }
+        nr = s2 / (y - x + 1);
+        System.out.println("Media este :" + nr);
+
+//primele n numere Fibonacci si media lor
+        int n = 20;
+        float MedF = 0;
+        int v[] = new int[100];
+        v[1] = 1;
+        v[2] = 1;
+        for (int i = 2; i <= n; i++) {
+
+            v[i] = v[i - 1] + v[i - 2];
+        }
+        System.out.println("Sirul fibonnaci al celor " + n + " numere este :");
+        for (int i = 1; i <= n; i++) {
+            MedF += v[i];
+            System.out.printf("  %d ", v[i]);
+
+        }
+        System.out.println("-Media sirului fibo este:" + (MedF / n));
+
+//Arrays 
+        int arr1[] = {13, 6, 2, 8, 2, 3};
+        int arr2[] = {13, 6, 2, 8, 2, 3, 1};
+        boolean a;
+        if (arr1[0] == arr1[arr1.length - 1]) {
+            a = true;
+        } else {
+            a = false;
+        }
+        System.out.println(a);
+
+        //compare arrays
+        if (arr1.length != arr2.length) {
+            a = false;
+        } else {
+            for (int i = 0; i < arr1.length; i++) {
+                if (arr1[i] == arr2[i]) {
+                    a = true;
+                } else {
+                    a = false;
+                }
+            }
+
+        }
+        if (a == false) {
+            System.out.println("cele 2 arrays nu sunt egale");
+        } else {
+            System.out.println("cele 2 arrays  sunt egale");
+        }
+
+        //concatenare
+        int ar1[] = {13, 6, 2, 8, 2, 3};
+        int ar2[] = {15, 3, 6, 7, 12, 43};
+        int lungime = ar1.length + ar2.length;
+        int ar3[] = new int[lungime];
+        for (int k = 0; k < lungime; k++) {
+   
+            if(k<ar1.length)
+                ar3[k]=ar1[k];
+            else
+                ar3[k]=ar2[k-ar2.length];
+        }
+        
+        for (int k = 0; k < lungime; k++)
+        {
+            System.out.printf("  %d ", ar3[k]);
+        }
+    }
+}
